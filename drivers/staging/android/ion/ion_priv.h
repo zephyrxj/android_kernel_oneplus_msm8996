@@ -137,8 +137,8 @@ struct ion_device {
  * The mutex stored here is used to protect both handles tree
  * as well as the handles themselves, and should be held while modifying either.
  */
-+struct ion_client {
-+	struct rb_node node;
+struct ion_client {
+	struct rb_node node;
 	struct ion_device *dev;
 	struct rb_root handles;
 	struct idr idr;
