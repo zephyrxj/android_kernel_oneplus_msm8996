@@ -35,7 +35,6 @@ unexport GREP_OPTIONS
 # is now up to date.
 #
 # The only cases where we need to modify files which have global
-# effects are thus separated out and done before the recursive
 # descending is started. They are now explicitly listed as the
 # prepare rule.
 
@@ -623,6 +622,9 @@ KBUILD_CFLAGS	+= -Os $(call cc-disable-warning,maybe-uninitialized,)
 else
 KBUILD_CFLAGS	+= -O2
 endif
+
+# Needed to unbreak GCC 7.x and above
+KBUILD_CFLAGS   += $(call cc-option,-fno-store-merging,)
 
 # Tell gcc to never replace conditional load with a non-conditional one
 KBUILD_CFLAGS	+= $(call cc-option,--param=allow-store-data-races=0)
