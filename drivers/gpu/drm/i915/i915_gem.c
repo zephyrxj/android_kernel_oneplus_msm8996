@@ -5131,11 +5131,6 @@ void i915_gem_track_fb(struct drm_i915_gem_object *old,
 	}
 }
 
-<<<<<<< HEAD
-/* All the new VM stuff */
-u64 i915_gem_obj_offset(struct drm_i915_gem_object *o,
-			struct i915_address_space *vm)
-=======
 static bool mutex_is_locked_by(struct mutex *mutex, struct task_struct *task)
 {
 	if (!mutex_is_locked(mutex))
@@ -5150,7 +5145,6 @@ static bool mutex_is_locked_by(struct mutex *mutex, struct task_struct *task)
 }
 
 static bool i915_gem_shrinker_lock(struct drm_device *dev, bool *unlock)
->>>>>>> bc07ee33284a... Revert "drm/i915: Fix mutex->owner inspection race under DEBUG_MUTEXES"
 {
 	struct drm_i915_private *dev_priv = o->base.dev->dev_private;
 	struct i915_vma *vma;
